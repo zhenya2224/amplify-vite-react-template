@@ -7,8 +7,13 @@ backend:
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
+    preBuild:
+      commands:
+        - npm install --legacy-peer-deps
     build:
       commands:
+        # Эта команда принудительно доставит нужные бинарники именно для Linux среды Amplify
+        - npm rebuild esbuild
         - npm run build
   artifacts:
     baseDirectory: dist
