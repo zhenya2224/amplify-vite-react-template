@@ -20,6 +20,9 @@
     "node": ">= 20.20.0",
     "npm": ">= 10.8.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.60.2"
+  },
   "devDependencies": {
     "@aws-amplify/backend": "^1.22.0",
     "@aws-amplify/backend-cli": "^1.8.2",
